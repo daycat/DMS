@@ -2,6 +2,10 @@ import requests
 import gzip
 import shutil
 import os
+print("Now delete GeoLite2-City.mmdb")
+os.remove("GeoLite2-City.mmdb")
+print("Now delete GeoLite2-ASN.mmdb")
+os.remove("GeoLite2-ASN.mmdb")
 print("Now download GeoLite2-ASN.mmdb")
 r = requests.get("https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-ASN&license_key=smjmb9lr1MyqdoFK&suffix=tar.gz")
 open("GeoLite2-ASN.mmdb.gz", 'wb').write(r.content)
